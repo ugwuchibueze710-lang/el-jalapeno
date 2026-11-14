@@ -50,6 +50,7 @@
     var s=Math.max(W/IMG_W,H/IMG_H), dw=IMG_W*s, dh=IMG_H*s, ox=(W-dw)/2, oy=H-dh;
     [bg,dof].forEach(function(e){e.style.backgroundSize=dw+'px '+dh+'px';e.style.backgroundPosition=ox+'px '+oy+'px';});
     function P(x,y){return [ox+x*s, oy+y*s];}
+    if(window.__ejSway) window.__ejSway(P,s);
     var sr;
     if(desk){
       var p=P(SIGN.x,SIGN.y), w=SIGN.w*s;

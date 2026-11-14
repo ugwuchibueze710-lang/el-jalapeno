@@ -99,9 +99,12 @@
 /* ================= FOREGROUND MEXICAN DECOR (depth of field) ================= */
 .fg{position:absolute;inset:0;z-index:4;pointer-events:none}
 .fg img{position:absolute}
-.fg-papel{top:-3vh;left:-6vw;width:44vw;filter:blur(2.2px) brightness(.82) saturate(1.25) drop-shadow(0 18px 18px rgba(0,0,0,.45));transform-origin:50% 0;animation:sway 9s ease-in-out infinite}
-.fg-ristra.r1{top:-6vh;right:1.5vw;height:58vh;filter:blur(1.6px) brightness(.85) saturate(1.15) drop-shadow(-8px 18px 16px rgba(0,0,0,.55));transform-origin:50% 0;animation:sway 7s ease-in-out infinite}
-.fg-ristra.r2{top:-10vh;right:-4.5vw;height:66vh;filter:blur(4px) brightness(.55);transform-origin:50% 0;animation:sway 8s ease-in-out infinite reverse}
+.fg-papel{position:absolute;top:-3vh;left:-6vw;width:44vw;aspect-ratio:1080/464;filter:blur(2.2px) brightness(.82) saturate(1.25) drop-shadow(0 18px 18px rgba(0,0,0,.45))}
+.fg-papel svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.fg-papel path{fill:none;stroke:#efeadf;stroke-width:3}
+.fg .fg-papel img{position:absolute;height:auto;will-change:transform}
+.fg-ristra.r1{top:-6vh;right:1.5vw;height:58vh;filter:blur(1.6px) brightness(.85) saturate(1.15) drop-shadow(-8px 18px 16px rgba(0,0,0,.55));transform-origin:50% 0;will-change:transform}
+.fg-ristra.r2{top:-10vh;right:-4.5vw;height:66vh;filter:blur(4px) brightness(.55);transform-origin:50% 0;will-change:transform}
 .fg-agave{right:-15vw;bottom:-16vh;height:50vh;filter:blur(3.5px) brightness(.5) saturate(1.1)}
 .fg-marigold{left:-3vw;bottom:-6vh;height:24vh;filter:blur(2.5px) brightness(.72) saturate(1.2)}
 @keyframes sway{0%,100%{transform:rotate(-1.2deg)}50%{transform:rotate(1.2deg)}}
@@ -167,3 +170,8 @@
 }
 @media (prefers-reduced-motion:reduce){.steam span,.rays span,.grain,.fg img,.ns-jal{animation:none!important}}
 .splash.sr{display:none}
+
+/* ceiling flags cut from the real photo — swayed by sway.js */
+.sway-bg{position:absolute;inset:0;z-index:0;pointer-events:none;filter:contrast(1.22) saturate(1.3) brightness(.78) sepia(.12);transition:filter .45s}
+.sway-bg img{position:absolute;will-change:transform;user-select:none}
+.hero.off .sway-bg{filter:contrast(1.15) saturate(.9) brightness(.42)}

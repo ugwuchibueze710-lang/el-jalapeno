@@ -50,6 +50,7 @@
   <div class="scene" id="scene">
     <div class="hero-bg" id="heroBg" role="img" aria-label="Inside El Jalapeño: lime green walls, white booths, Mexican flag and papel picado"></div>
     <div class="hero-bg dof" id="heroDof" aria-hidden="true"></div>
+    <div class="sway-bg" id="swayBg" aria-hidden="true"></div>
     <div class="fx grade" aria-hidden="true"></div>
     <div class="fx teal" aria-hidden="true"></div>
     <div class="fx rays" aria-hidden="true"><span></span><span></span><span></span></div>
@@ -84,7 +85,7 @@
 
     <!-- Mexican decor in the foreground -->
     <div class="fg" aria-hidden="true">
-      <img class="fg-papel" src="assets/img/fg-papel.png" alt="">
+      <div class="fg-papel" id="fgPapel"></div>
       <img class="fg-ristra r1" src="assets/img/fg-ristra.png" alt="">
       <img class="fg-ristra r2" src="assets/img/fg-ristra2.png" alt="">
       <img class="fg-agave" src="assets/img/fg-agave.png" alt="">
@@ -191,5 +192,6 @@
 <script src="assets/menu.js"></script>
 <script src="assets/app.js"></script>
 <script src="assets/neon-bg.js"></script>
+<script src="assets/sway.js"></script>
 </body>
 </html>
