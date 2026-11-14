@@ -11,8 +11,9 @@
 <meta property="og:image" content="assets/img/logo-sign.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Pacifico&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Pacifico&family=Kaushan+Script&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/hero.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Restaurant","name":"El Jalapeño","servesCuisine":"Mexican","telephone":"+1-270-736-9002","email":"restaurantmexicanfoodeljalapen@gmail.com","priceRange":"$$",
 "address":{"@type":"PostalAddress","streetAddress":"370 Main St","addressLocality":"Sacramento","addressRegion":"KY","postalCode":"42372","addressCountry":"US"},
@@ -41,45 +42,66 @@
   </a>
 </header>
 
-<section class="hero">
-  <div class="hero-bg" role="img" aria-label="Inside El Jalapeño: lime green walls, white booths and papel picado flags"></div>
-  <div class="hero-grade" aria-hidden="true"></div>
-  <div class="hero-lights" aria-hidden="true"><span class="l1"></span><span class="l2"></span><span class="l3"></span><span class="l4"></span></div>
-  <div class="hero-bokeh" aria-hidden="true"></div>
-  <div class="hero-shade"></div>
-  <div class="hero-vignette" aria-hidden="true"></div>
-  <div class="hero-inner">
-    <div class="hero-sign on" id="neonSign">
-      <span class="mount m1"></span><span class="mount m2"></span><span class="mount m3"></span><span class="mount m4"></span>
-      <div class="neon-plate">
-        <img class="plate" src="assets/img/logo-sign.png" alt="El Jalapeño — Authentic Mexican Cuisine">
-        <img class="tubes" src="assets/img/logo-transparent.png" alt="" aria-hidden="true">
-        <span class="tube-border" aria-hidden="true"></span>
+<section class="hero" id="hero">
+  <div class="scene" id="scene">
+    <div class="hero-bg" id="heroBg" role="img" aria-label="Inside El Jalapeño: lime green walls, white booths, Mexican flag and papel picado"></div>
+    <div class="hero-bg dof" id="heroDof" aria-hidden="true"></div>
+    <div class="fx grade" aria-hidden="true"></div>
+    <div class="fx teal" aria-hidden="true"></div>
+    <div class="fx rays" aria-hidden="true"><span></span><span></span><span></span></div>
+    <div class="fx haze" aria-hidden="true"></div>
+    <div class="fx bokeh" aria-hidden="true"></div>
+
+    <!-- neon sign mounted on the back wall -->
+    <div class="neon-sign on" id="neonSign">
+      <div class="wall-spill" aria-hidden="true"></div>
+      <div class="acrylic" aria-hidden="true"></div>
+      <span class="standoff s1"></span><span class="standoff s2"></span><span class="standoff s3"></span><span class="standoff s4"></span>
+      <div class="ns-mascot">
+        <img class="tube" src="assets/img/mascot-tube.png" alt="" aria-hidden="true">
+        <img class="art" src="assets/img/mascot.png" alt="El Jalapeño mascot: a jalapeño in a sombrero playing guitar">
       </div>
-      <span class="wire-anchor" id="wireStart"></span>
+      <div class="ns-text">
+        <span class="ns-el">El</span>
+        <span class="ns-jal">Jalapeño</span>
+        <svg class="ns-swoosh" viewBox="0 0 400 40" preserveAspectRatio="none" aria-hidden="true">
+          <path class="sw1" d="M8,26 C90,8 200,6 300,16 S380,30 394,22"/>
+          <path class="sw2" d="M40,34 C120,22 230,22 330,30"/>
+        </svg>
+        <span class="ns-tag">Authentic Mexican Cuisine</span>
+      </div>
     </div>
-    <div class="hero-copy">
+
+    <!-- wire, plug into the real wall outlet, wall switch -->
+    <svg class="wire" id="wire" aria-hidden="true"><defs><mask id="wireMask" maskUnits="userSpaceOnUse"><rect id="wmRect" x="0" y="0" width="5000" height="5000" fill="#fff"/><polygon id="wmTable" fill="#000" points=""/></mask></defs><g mask="url(#wireMask)"><path id="wirePath" d=""/><path id="wireShine" d=""/></g></svg>
+    <span class="plug" id="plug" aria-hidden="true"></span>
+    <button class="wall-switch" id="neonSwitch" aria-pressed="true" aria-label="Turn the neon sign off"><span class="lever"></span></button>
+    <span class="switch-hint" id="switchHint">Flip the switch</span>
+
+    <!-- Mexican decor in the foreground -->
+    <div class="fg" aria-hidden="true">
+      <img class="fg-papel" src="assets/img/fg-papel.png" alt="">
+      <img class="fg-ristra r1" src="assets/img/fg-ristra.png" alt="">
+      <img class="fg-ristra r2" src="assets/img/fg-ristra2.png" alt="">
+      <img class="fg-agave" src="assets/img/fg-agave.png" alt="">
+      <img class="fg-marigold" src="assets/img/fg-marigold.png" alt="">
+    </div>
+
+    <div class="fx vignette" aria-hidden="true"></div>
+    <div class="fx grain" aria-hidden="true"></div>
+
+    <div class="hero-copy" id="heroCopy">
       <p class="script">Visit us at our great restaurant</p>
-      <h1><span class="splash sl" aria-hidden="true"><i></i><i></i><i></i></span>El Jalapeño<span class="splash sr" aria-hidden="true"><i></i><i></i><i></i></span></h1>
-      <p class="tag"><span class="dash"></span>Authentic Mexican Cuisine<span class="dash"></span></p>
-      <p class="addr">370 Main St &nbsp;·&nbsp; Sacramento, KY</p>
+      <h1><span class="splash sl" aria-hidden="true"><i></i><i></i><i></i></span>Authentic<br><em>Mexican Cuisine</em><span class="splash sr" aria-hidden="true"><i></i><i></i><i></i></span></h1>
+      <p class="addr">El Jalapeño &nbsp;·&nbsp; 370 Main St &nbsp;·&nbsp; Sacramento, KY</p>
       <div class="hero-ctas">
         <a href="#menu" class="btn btn-orange">View Menu</a>
         <a href="tel:+12707369002" class="btn btn-ghost">(270) 736-9002</a>
       </div>
-      <ul class="hero-badges">
-        <li>Dine-In</li><li>Takeout</li><li>Drive-Through</li><li>Outdoor Patio</li>
-      </ul>
+      <ul class="hero-badges"><li>Dine-In</li><li>Takeout</li><li>Drive-Through</li><li>Outdoor Patio</li></ul>
     </div>
   </div>
-  <svg class="wire" id="wire" aria-hidden="true"><path id="wirePath" d=""/><path id="wireShine" d=""/></svg>
-  <div class="wall-power">
-    <div class="outlet" aria-hidden="true"><span class="slot"></span><span class="slot"></span><span class="plug" id="wireEnd"></span></div>
-    <button class="wall-switch" id="neonSwitch" aria-pressed="true" aria-label="Turn the neon sign off">
-      <span class="lever"></span>
-    </button>
-    <span class="switch-label" id="switchLabel">ON</span>
-  </div>
+
   <svg class="neon-curve" viewBox="0 0 1600 90" preserveAspectRatio="none" aria-hidden="true">
     <path class="nc-green" d="M0,70 C380,10 760,8 1050,40 S1450,80 1600,30"/>
     <path class="nc-red" d="M0,84 C420,30 820,28 1100,58 S1480,92 1600,50"/>
@@ -158,6 +180,7 @@
   <img src="assets/img/logo-sign.png" alt="El Jalapeño">
   <p>370 Main St, Sacramento, KY 42372 · <a href="tel:+12707369002">(270) 736-9002</a></p>
   <p class="small">© <span id="yr"></span> El Jalapeño. All rights reserved.</p>
+  <p class="small credits">Decor photos via Wikimedia Commons: chile ristra by Dick Thompson (CC BY-SA 2.0), agave by Derek Ramsey (CC BY-SA 3.0), marigolds by Sixflashphoto (CC BY-SA 4.0), chile ristra by NRCS NM (public domain).</p>
 </footer>
 
 <script src="assets/menu.js"></script>
