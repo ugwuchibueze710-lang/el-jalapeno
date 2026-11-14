@@ -98,3 +98,34 @@ section.menu,section.gallery,section.visit{padding:80px 5vw}
 }
 
 .credits{font-size:11px;color:#777;max-width:900px;margin:8px auto 0}
+
+/* LANGUAGE TOGGLE */
+.lang{display:flex;border:2px solid rgba(255,255,255,.75);border-radius:999px;overflow:hidden;margin-right:4px;box-shadow:0 0 12px rgba(126,211,33,.35)}
+.lang-btn{background:transparent;color:#fff;border:0;font-weight:800;font-size:14px;letter-spacing:.06em;padding:8px 13px;cursor:pointer}
+.lang-btn[aria-pressed="true"]{background:var(--lime);color:#111}
+.lang-btn:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
+@media (max-width:720px){.lang{margin-left:auto;margin-right:4px}.lang-btn{padding:6px 9px;font-size:12px}.nav-toggle{margin-left:0}}
+
+/* ===== NEON LOGO FIELD — no empty white/black space anywhere ===== */
+html{background:#140803}
+body{background:radial-gradient(ellipse at 50% 0%,#2a1206 0%,#140803 55%,#0d0502 100%) fixed;color:#fff}
+#neonBg{position:fixed;inset:0;z-index:0;pointer-events:none}
+#neonFg{position:fixed;inset:0;z-index:30;pointer-events:none}
+section,footer,.strip{position:relative;z-index:1}
+.strip{background:rgba(63,116,32,.88);backdrop-filter:blur(2px);box-shadow:0 0 30px rgba(126,211,33,.35)}
+.menu{background:linear-gradient(180deg,rgba(60,110,30,.55),rgba(30,60,15,.55))!important}
+.menu-grid{background:rgba(255,248,239,.96);color:var(--ink);box-shadow:0 0 0 2px rgba(126,211,33,.45),0 0 40px rgba(126,211,33,.35),0 14px 40px rgba(0,0,0,.5)}
+.gallery{background:transparent}
+.gal-grid img{box-shadow:0 0 0 2px rgba(255,120,40,.35),0 0 24px rgba(255,90,20,.3)}
+.visit{background:transparent!important}
+.section-title{color:#fff!important;text-shadow:0 0 6px #fff,0 0 16px #7dff3a,0 0 34px #3fd61a}
+.menu .section-title{text-shadow:0 0 6px #fff,0 0 16px #ff6a3d,0 0 34px #ff3b1a}
+.visit-card{background:rgba(25,12,5,.72);color:#fff;backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.12);border-top:6px solid var(--orange);box-shadow:0 0 30px rgba(255,100,30,.18)}
+.visit-card h3{color:var(--lime)}
+.visit-card a{color:#fff}
+.visit-card .link{color:#ffb27a}
+.hours td{border-bottom-color:rgba(255,255,255,.12)}
+.hours tr.today{background:rgba(126,211,33,.22)}
+.small{color:#cfc4b8}
+.foot{background:rgba(10,4,1,.82)!important;backdrop-filter:blur(4px)}
+.credits{color:#8a7f74}

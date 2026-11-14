@@ -31,14 +31,18 @@
   <a href="#top" class="nav-logo" aria-label="El Jalapeño home"><img src="assets/img/logo-sign.png" alt="El Jalapeño — Authentic Mexican Cuisine"></a>
   <button class="nav-toggle" aria-label="Open menu" onclick="document.body.classList.toggle('nav-open')"><span></span><span></span><span></span></button>
   <nav class="nav-links">
-    <a href="#top" class="active">Home</a>
-    <a href="#menu">Menu</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#visit">Visit Us</a>
+    <a href="#top" class="active" data-i18n="nav_home">Home</a>
+    <a href="#menu" data-i18n="nav_menu">Menu</a>
+    <a href="#gallery" data-i18n="nav_gallery">Gallery</a>
+    <a href="#visit" data-i18n="nav_visit">Visit Us</a>
   </nav>
+  <div class="lang" role="group" aria-label="Language / Idioma">
+    <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+  </div>
   <a class="btn-call" href="tel:+12707369002">
     <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
-    <span>Call to Order</span>
+    <span data-i18n="call">Call to Order</span>
   </a>
 </header>
 
@@ -68,7 +72,7 @@
           <path class="sw1" d="M8,26 C90,8 200,6 300,16 S380,30 394,22"/>
           <path class="sw2" d="M40,34 C120,22 230,22 330,30"/>
         </svg>
-        <span class="ns-tag">Authentic Mexican Cuisine</span>
+        <span class="ns-tag" data-i18n="tagline">Authentic Mexican Cuisine</span>
       </div>
     </div>
 
@@ -76,7 +80,7 @@
     <svg class="wire" id="wire" aria-hidden="true"><defs><mask id="wireMask" maskUnits="userSpaceOnUse"><rect id="wmRect" x="0" y="0" width="5000" height="5000" fill="#fff"/><polygon id="wmTable" fill="#000" points=""/></mask></defs><g mask="url(#wireMask)"><path id="wirePath" d=""/><path id="wireShine" d=""/></g></svg>
     <span class="plug" id="plug" aria-hidden="true"></span>
     <button class="wall-switch" id="neonSwitch" aria-pressed="true" aria-label="Turn the neon sign off"><span class="lever"></span></button>
-    <span class="switch-hint" id="switchHint">Flip the switch</span>
+    <span class="switch-hint" id="switchHint" data-i18n="flip">Flip the switch</span>
 
     <!-- Mexican decor in the foreground -->
     <div class="fg" aria-hidden="true">
@@ -91,14 +95,14 @@
     <div class="fx grain" aria-hidden="true"></div>
 
     <div class="hero-copy" id="heroCopy">
-      <p class="script">Visit us at our great restaurant</p>
-      <h1><span class="splash sl" aria-hidden="true"><i></i><i></i><i></i></span>Authentic<br><em>Mexican Cuisine</em><span class="splash sr" aria-hidden="true"><i></i><i></i><i></i></span></h1>
+      <p class="script" data-i18n="visit_line">Visit us at our great restaurant</p>
+      <h1><span class="splash sl" aria-hidden="true"><i></i><i></i><i></i></span><span data-i18n="h1">Authentic<br><em>Mexican Cuisine</em></span><span class="splash sr" aria-hidden="true"><i></i><i></i><i></i></span></h1>
       <p class="addr">El Jalapeño &nbsp;·&nbsp; 370 Main St &nbsp;·&nbsp; Sacramento, KY</p>
       <div class="hero-ctas">
-        <a href="#menu" class="btn btn-orange">View Menu</a>
+        <a href="#menu" class="btn btn-orange" data-i18n="view_menu">View Menu</a>
         <a href="tel:+12707369002" class="btn btn-ghost">(270) 736-9002</a>
       </div>
-      <ul class="hero-badges"><li>Dine-In</li><li>Takeout</li><li>Drive-Through</li><li>Outdoor Patio</li></ul>
+      <ul class="hero-badges"><li data-i18n="b_dine">Dine-In</li><li data-i18n="b_take">Takeout</li><li data-i18n="b_drive">Drive-Through</li><li data-i18n="b_patio">Outdoor Patio</li></ul>
     </div>
   </div>
 
@@ -117,21 +121,21 @@
 </section>
 
 <section class="strip">
-  <div><b>Lunch Specials</b><span>11:00 AM – 3:00 PM · Mon – Fri</span></div>
-  <div><b>Kids Meals $7.25</b><span>10 years old and under</span></div>
-  <div><b>Boba &amp; Smoothies</b><span>Milkshakes, fresh waters &amp; more</span></div>
+  <div><b data-i18n="s_lunch">Lunch Specials</b><span data-i18n="s_lunch2">11:00 AM – 3:00 PM · Mon – Fri</span></div>
+  <div><b data-i18n="s_kids">Kids Meals $7.25</b><span data-i18n="s_kids2">10 years old and under</span></div>
+  <div><b data-i18n="s_boba">Boba &amp; Smoothies</b><span data-i18n="s_boba2">Milkshakes, fresh waters &amp; more</span></div>
 </section>
 
 <section class="menu" id="menu">
-  <h2 class="section-title">Our Menu</h2>
+  <h2 class="section-title" data-i18n="t_menu">Our Menu</h2>
   <div class="menu-tabs" id="menuTabs" role="tablist"></div>
   <p class="menu-note" id="menuNote"></p>
   <div class="menu-grid" id="menuGrid"></div>
-  <p class="menu-foot">Notice: consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness. Prices subject to change.</p>
+  <p class="menu-foot" data-i18n="notice">Notice: consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness. Prices subject to change.</p>
 </section>
 
 <section class="gallery" id="gallery">
-  <h2 class="section-title">Gallery</h2>
+  <h2 class="section-title" data-i18n="t_gallery">Gallery</h2>
   <div class="gal-grid">
     <img src="assets/img/interior-hero.jpg" alt="Dining room with papel picado and white booths" class="tall">
     <img src="assets/img/fajitas-sizzling.jpg" alt="Sizzling fajitas">
@@ -145,29 +149,29 @@
 </section>
 
 <section class="visit" id="visit">
-  <h2 class="section-title">Visit Us</h2>
+  <h2 class="section-title" data-i18n="t_visit">Visit Us</h2>
   <div class="visit-grid">
     <div class="visit-card">
-      <h3>Location</h3>
+      <h3 data-i18n="loc">Location</h3>
       <p>370 Main St<br>Sacramento, KY 42372</p>
-      <a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=El+Jalape%C3%B1o+370+Main+St+Sacramento+KY+42372">Get Directions →</a>
-      <h3>Contact</h3>
+      <a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=El+Jalape%C3%B1o+370+Main+St+Sacramento+KY+42372"><span data-i18n="dir">Get Directions →</span></a>
+      <h3 data-i18n="contact">Contact</h3>
       <p><a href="tel:+12707369002">(270) 736-9002</a><br>
       <a href="mailto:restaurantmexicanfoodeljalapen@gmail.com">restaurantmexicanfoodeljalapen@gmail.com</a></p>
-      <a class="link" target="_blank" rel="noopener" href="https://www.facebook.com/p/El-jalape%C3%B1o-Restaurant-61558425036163/">Follow us on Facebook →</a>
+      <a class="link" target="_blank" rel="noopener" href="https://www.facebook.com/p/El-jalape%C3%B1o-Restaurant-61558425036163/"><span data-i18n="fb">Follow us on Facebook →</span></a>
     </div>
     <div class="visit-card">
-      <h3>Hours</h3>
+      <h3 data-i18n="hours">Hours</h3>
       <table class="hours" id="hours">
-        <tr data-d="1"><td>Monday</td><td>Closed</td></tr>
-        <tr data-d="2"><td>Tuesday</td><td>11:00 AM – 9:00 PM</td></tr>
-        <tr data-d="3"><td>Wednesday</td><td>11:00 AM – 9:00 PM</td></tr>
-        <tr data-d="4"><td>Thursday</td><td>11:00 AM – 9:00 PM</td></tr>
-        <tr data-d="5"><td>Friday</td><td>11:00 AM – 9:30 PM</td></tr>
-        <tr data-d="6"><td>Saturday</td><td>11:00 AM – 9:00 PM</td></tr>
-        <tr data-d="0"><td>Sunday</td><td>11:00 AM – 8:00 PM</td></tr>
+        <tr data-d="1"><td data-i18n="d_mon">Monday</td><td data-i18n="closed">Closed</td></tr>
+        <tr data-d="2"><td data-i18n="d_tue">Tuesday</td><td>11:00 AM – 9:00 PM</td></tr>
+        <tr data-d="3"><td data-i18n="d_wed">Wednesday</td><td>11:00 AM – 9:00 PM</td></tr>
+        <tr data-d="4"><td data-i18n="d_thu">Thursday</td><td>11:00 AM – 9:00 PM</td></tr>
+        <tr data-d="5"><td data-i18n="d_fri">Friday</td><td>11:00 AM – 9:30 PM</td></tr>
+        <tr data-d="6"><td data-i18n="d_sat">Saturday</td><td>11:00 AM – 9:00 PM</td></tr>
+        <tr data-d="0"><td data-i18n="d_sun">Sunday</td><td>11:00 AM – 8:00 PM</td></tr>
       </table>
-      <p class="small">Dine-in · Takeout · Drive-through · Outdoor seating · Wheelchair accessible · Kids' menu</p>
+      <p class="small" data-i18n="services">Dine-in · Takeout · Drive-through · Outdoor seating · Wheelchair accessible · Kids' menu</p>
     </div>
     <div class="visit-map">
       <iframe title="Map to El Jalapeño" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
@@ -179,11 +183,13 @@
 <footer class="foot">
   <img src="assets/img/logo-sign.png" alt="El Jalapeño">
   <p>370 Main St, Sacramento, KY 42372 · <a href="tel:+12707369002">(270) 736-9002</a></p>
-  <p class="small">© <span id="yr"></span> El Jalapeño. All rights reserved.</p>
-  <p class="small credits">Decor photos via Wikimedia Commons: chile ristra by Dick Thompson (CC BY-SA 2.0), agave by Derek Ramsey (CC BY-SA 3.0), marigolds by Sixflashphoto (CC BY-SA 4.0), chile ristra by NRCS NM (public domain).</p>
+  <p class="small">© <span id="yr"></span> El Jalapeño. <span data-i18n="rights">All rights reserved.</span></p>
+  <p class="small credits"><span data-i18n="credits">Decor photos via</span> Wikimedia Commons: chile ristra by Dick Thompson (CC BY-SA 2.0), agave by Derek Ramsey (CC BY-SA 3.0), marigolds by Sixflashphoto (CC BY-SA 4.0), chile ristra by NRCS NM (public domain).</p>
 </footer>
 
+<script src="assets/i18n.js"></script>
 <script src="assets/menu.js"></script>
 <script src="assets/app.js"></script>
+<script src="assets/neon-bg.js"></script>
 </body>
 </html>

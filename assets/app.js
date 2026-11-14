@@ -1,18 +1,37 @@
 (function(){
-  var tabs=document.getElementById('menuTabs'), grid=document.getElementById('menuGrid'), note=document.getElementById('menuNote');
+  // ===== LANGUAGE (EN / ES) =====
+  var LANG='en';
+  try{ LANG=localStorage.getItem('ej_lang')||((navigator.language||'').toLowerCase().indexOf('es')===0?'es':'en'); }catch(e){}
+  function t(k){ return (I18N[LANG]&&I18N[LANG][k])||I18N.en[k]||''; }
+
+  var tabs=document.getElementById('menuTabs'), grid=document.getElementById('menuGrid'), note=document.getElementById('menuNote'), cur=0;
   function show(i){
-    var c=MENU[i];
+    cur=i; var c=MENU[i], es=LANG==='es';
     [].forEach.call(tabs.children,function(b,k){b.classList.toggle('on',k===i);b.setAttribute('aria-selected',k===i);});
-    note.textContent=c.note||'';
+    note.textContent=(es?c.note_es:c.note)||'';
     grid.innerHTML=c.items.map(function(it){
-      return '<article class="dish"><div class="dish-top"><h3>'+it[0]+'</h3><span class="dots"></span><span class="price">$'+it[2]+'</span></div>'+(it[1]?'<p>'+it[1]+'</p>':'')+'</article>';
+      var name=es?it[3]:it[0], desc=es?it[4]:it[1];
+      return '<article class="dish"><div class="dish-top"><h3>'+name+'</h3><span class="dots"></span><span class="price">$'+it[2]+'</span></div>'+(desc?'<p>'+desc+'</p>':'')+'</article>';
     }).join('');
   }
-  MENU.forEach(function(c,i){
-    var b=document.createElement('button'); b.textContent=c.cat; b.setAttribute('role','tab');
-    b.onclick=function(){show(i);}; tabs.appendChild(b);
-  });
-  show(0);
+  function buildTabs(){
+    tabs.innerHTML='';
+    MENU.forEach(function(c,i){
+      var b=document.createElement('button'); b.textContent=LANG==='es'?c.cat_es:c.cat; b.setAttribute('role','tab');
+      b.onclick=function(){show(i);}; tabs.appendChild(b);
+    });
+    show(cur);
+  }
+  function applyLang(lang){
+    LANG=lang; try{localStorage.setItem('ej_lang',lang);}catch(e){}
+    document.documentElement.lang=lang; document.title=t('_title');
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ el.innerHTML=t(el.getAttribute('data-i18n')); });
+    document.querySelectorAll('.lang-btn').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-lang')===lang); });
+    buildTabs();
+    if(window.__ejLayout){ var sw=document.getElementById('neonSwitch'); sw.setAttribute('aria-label', sw.getAttribute('aria-pressed')==='true'?t('sw_off'):t('sw_on')); window.__ejLayout(); }
+  }
+  document.querySelectorAll('.lang-btn').forEach(function(b){ b.addEventListener('click',function(){ applyLang(b.getAttribute('data-lang')); }); });
+  applyLang(LANG);
 
   // ===== HERO: pin sign / plug / switch to real spots in the restaurant photo =====
   var IMG_W=1440, IMG_H=700;               // interior-cine.jpg
@@ -69,12 +88,14 @@
   }
   function setNeon(on){
     sign.classList.toggle('on',on); hero.classList.toggle('off',!on);
-    sw.setAttribute('aria-pressed',on); sw.setAttribute('aria-label',on?'Turn the neon sign off':'Turn the neon sign on');
+    sw.setAttribute('aria-pressed',on); sw.setAttribute('aria-label',on?t('sw_off'):t('sw_on'));
+    document.body.classList.toggle('neon-off',!on);
     if(on){ sign.classList.remove('flicker'); void sign.offsetWidth; sign.classList.add('flicker'); }
   }
   sw.addEventListener('click',function(){ clickSound(); hint.classList.add('gone'); setNeon(sw.getAttribute('aria-pressed')!=='true'); });
   window.addEventListener('resize',layout); window.addEventListener('load',layout);
   if(document.fonts) document.fonts.ready.then(layout);
+  window.__ejLayout=layout;
   layout(); setNeon(true);
 
   // highlight today's hours
